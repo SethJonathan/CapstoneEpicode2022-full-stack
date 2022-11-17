@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Scheda Creazione Film</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="validateForm" (ngSubmit)="submitForm(validateForm.value)"> 
+        <mat-form-field class="film-tit" appearance="outline">
+            <h3>Titolo del film</h3>
+            <input matInput formControlName="title" placeholder="Title">
+        </mat-form-field>
+        <mat-form-field class="film-type" appearance="outline">
+            <h3>Tipologia del film</h3>
+            <input matInput formControlName="filmtype" placeholder="Film typology">
+        </mat-form-field>
+        <mat-form-field class="film-desc" appearance="outline">
+            <h3>Breve descrizione del film</h3>
+            <input matInput formControlName="description" placeholder="short description">
+        </mat-form-field>
+        <mat-form-field class="film-riass" appearance="fill">
+            <h3>Riassunto del film</h3>
+            <textarea matInput formControlName="summary" placeholder="plot summary "></textarea>
+        </mat-form-field>
+        <mat-form-field class="film-imgurl" appearance="standard">
+            <h3>Incolla link Immagine del film</h3>
+            <input matInput formControlName="imgUrl" placeholder="preview image url">
+        </mat-form-field>
+        <mat-card-actions class="action-item" align="end">
+            <button mat-button color="warn" [disabled]="!validateForm.valid">Add</button>
+        </mat-card-actions>
+    </form>
+</mat-card>

@@ -1,0 +1,50 @@
+<mat-card>
+    <div>
+        <div class="inner-content">
+            <div>
+                <div>
+                    <h1>Anteprima dei dati dei films</h1>
+                    <app-films-form></app-films-form>
+                    <mat-card>
+                        <mat-card-content *ngFor="let film of filmList" >
+                            <mat-card class="film-card">
+                                <mat-card-header>
+                                    <div class="titoli">
+                                        <mat-card-title>{{film.title}}</mat-card-title>
+                                        <mat-card-subtitle>{{film.filmtype}}</mat-card-subtitle>
+                                        <mat-card-subtitle>{{film.description}}</mat-card-subtitle>
+                                    </div>
+                                    <div class="voto">
+                                        <h3>Voto medio:</h3>
+                                        <div id="stelle">
+                                            <mat-icon>stars</mat-icon>
+                                            <mat-icon>stars</mat-icon>
+                                            <mat-icon>stars</mat-icon>
+                                            <mat-icon>stars</mat-icon>
+                                            <mat-icon>stars</mat-icon>
+                                        </div>
+                                    </div>
+                                    
+                                </mat-card-header>
+                                <div class="contenuto">
+                                    <img mat-card-image src="{{film.imgUrl}}">
+                                
+                                    <mat-card-content class="riassunto">
+                                        {{film.summary}}
+                                    </mat-card-content>
+                                </div>
+                                <mat-card-actions>
+                                    <button mat-raised-button class="action-item" color="warn" (click)="confirmDialog(film)">
+                                        delete
+                                    </button>
+                                </mat-card-actions>
+                            </mat-card>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</mat-card>
